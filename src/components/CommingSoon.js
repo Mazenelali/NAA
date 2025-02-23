@@ -2,6 +2,14 @@ import { useState } from "react"
 import balckLogo from "../assets/Black.png"
 import './CommingSoon.css'
 
+
+const  listImg = []
+
+for (let index = 0; index < 12; index++) {
+    listImg.push(require(`../assets/ilovepdf_pages-to-jpg/Student support Card.pdf_page-00${index+1>=10 ?index+1:`0${index+1}`}.jpg`))    
+}
+
+
 export default function CommingSoon() {
     const [time, setTime] = useState(null)
 
@@ -25,9 +33,10 @@ export default function CommingSoon() {
 
     const newDot = document.createElement('span');
     newDot.classList.add('dot');
-    if(!loadingContainer)
-    loadingContainer?.appendChild(newDot);
-
+    if (!loadingContainer)
+        loadingContainer?.appendChild(newDot);
+    
+  
 
 
 
@@ -35,7 +44,7 @@ export default function CommingSoon() {
         <main className="container">
             <div className="inner">
                 <img src={balckLogo} alt="logo" className="logo" />
-                <div style={{ display: 'flex' , alignItems:'center' ,  gap:'20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                     <p className="title"> Launching Soon  </p>
                     <div class="loading-dots">
                         <span class="dot"></span>
@@ -44,7 +53,13 @@ export default function CommingSoon() {
                     </div>
                 </div>
                 <p className="timer"> {time} </p>
-                <button className="button" > Check our menu</button>
+                <p className="timer"> Explore Our Exclusive Menu! </p>
+                <div style={{ height: '5px', width: '100%', backgroundColor: 'black', borderRadius: '20px', margin: '20px 0 20px 0' }}></div>
+                <div className="imges">
+                    {listImg.map((img)=>(
+                        <img src={img} style={{width:"100%"}} loading='lazy' />
+                    ))}
+                </div>
             </div>
         </main>
     )

@@ -57,6 +57,15 @@
       transform: scale(1);
     }
   }
+  .imges{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .imges img {
+    border-radius: 10px;
+  }
 
 .button{
     width: 240px;
@@ -94,6 +103,11 @@
     .logo{
         width:200px;
         height: 200px;
+    }
+    .imges{
+      display: grid;
+      grid-template-columns: 1fr ;
+      gap: 10px;
     }
     
     .title{
