@@ -2,7 +2,6 @@ import { useState } from "react"
 import balckLogo from "../assets/Black.png"
 import './CommingSoon.css'
 
-
 const  listImg = []
 
 for (let index = 0; index < 12; index++) {

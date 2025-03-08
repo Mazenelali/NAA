@@ -1,4 +1,10 @@
-.App {
+:root {
+  --black: #231f20;
+  --red: #991e21;
+  --white:'#ffffff'
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
