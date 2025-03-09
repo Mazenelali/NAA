@@ -16,3 +16,14 @@
     width: 30px ;
     height: 40px ;   
 }
+
+.awrrow{
+    cursor: pointer;
+}
+
+@media (width < 500) {
+    .awrrow{
+        width: 30px;
+        height: 25px;
+    }
+}

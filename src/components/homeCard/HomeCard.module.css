@@ -1,23 +1,38 @@
-.card-container{
+.cardContainer{
     width: 300px;
     height: 300px;
     overflow: hidden;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+flex-shrink: 0;
     border-radius: 10px;
     -webkit-box-shadow: 2px 2px 23px -7px rgba(138,138,138,1);
     -moz-box-shadow: 2px 2px 23px -7px rgba(138,138,138,1);
     box-shadow: 2px 2px 23px -7px rgba(138,138,138,1);
     cursor: pointer;
+    background-color: var(--red);
     transition: 0.3s all;
 }
 
-.card-container:hover{
+.label{
+    color: white; 
+    font-size: x-large;
+}
+
+.cardContainer:hover{
     scale:1.02;
 }
 
 
 @media (width < 500px) {
-    .card-container{
+    .cardContainer{
         width: 230px;
-        height: 230px;
+        height: 100px;
+    }
+
+    .label{
+        color: white; 
+        font-size: large;
     }
 }

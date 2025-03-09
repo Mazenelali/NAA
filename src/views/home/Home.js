@@ -1,14 +1,18 @@
-import "./Home.css"
+import style from "./Home.module.css"
 import HomeCard from "../../components/homeCard/HomeCard"
-import LUlogo from "../../assets/LU.jpg"
 import { useNavigate } from "react-router-dom"
 
 export default function Home() {
   const navigate = useNavigate()
+
   return (
-    <div className='container-home'>
-      <HomeCard image={LUlogo} onClick={()=>navigate('/majors')}  />
-      <HomeCard  onClick={()=>navigate('/majors')} />   
+    <div>
+      <h1 className={style.title} > منصة طالب </h1>
+      <div className={style.containerHome}>
+        <HomeCard content={'التعليم الجامعي'} onClick={() => navigate('/sector/lu')} />
+        <HomeCard content={'التعليم المهني'} onClick={() => navigate('/sector/collage')} />
+        <HomeCard content={'دورات تدريبية'} onClick={() => navigate('/sector/training')} />
+      </div>
     </div>
   )
 }

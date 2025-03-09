@@ -1,8 +1,8 @@
-import './HomeCard.css'
-export default function HomeCard({image , onClick}) {
+import style from "./HomeCard.module.css"
+export default function HomeCard({content , onClick}) {
   return (
-    <div onClick={onClick} className='card-container'>
-        <img src={image} alt=''  style={{objectFit:'cover' , width:'100%' , height:'100%'}} />
+    <div onClick={onClick} className={style.cardContainer}>
+      <p className={style.label}>{content}</p>
     </div>
   )
 }
