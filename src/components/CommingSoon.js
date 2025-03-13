@@ -14,7 +14,7 @@ export default function CommingSoon() {
     const [time, setTime] = useState(null)
 
 
-    const targetDate = new Date("Mar 15, 2025 15:37:25").getTime()
+    const targetDate = new Date("Mar 22, 2025 15:37:25").getTime()
 
     setInterval(() => {
         const currentDate = new Date().getTime()
