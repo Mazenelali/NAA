@@ -53,7 +53,7 @@ export default function CommingSoon() {
                     </div>
                 </div>
                 <p className="timer"> {time} </p>
-                <p className="timer"> Explore Our Exclusive Menu! </p>
+                <p className="timer" style={{textAlign:'center'}}> Explore Our Exclusive Menu! </p>
                 <div style={{ height: '5px', width: '100%', backgroundColor: 'black', borderRadius: '20px', margin: '20px 0 20px 0' }}></div>
                 <div className="imges">
                     {listImg.map((img)=>(
