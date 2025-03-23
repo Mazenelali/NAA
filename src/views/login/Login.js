@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from "../login/Login.module.css"
 import logo  from "../../assets/Black.png"
 import { useNavigate } from 'react-router-dom'
-export default function Login() {
+export default function Login({getIsLogin}) {
 
     const [loginData , setLoginData] = useState({userName:'',password:''})
     const [error , setError] = useState('')
@@ -19,6 +19,7 @@ export default function Login() {
         if(loginData.userName.toLowerCase() === 'mazen' && loginData.password.toLowerCase() ==='1234'){
             localStorage.setItem('MINASSAT_TALEB_LOGIN',true)
             navigate('/')
+            getIsLogin?.(true)
             return
         }
         if(loginData.userName === 'mazen' && loginData.password !== '1234') {
@@ -57,7 +58,6 @@ export default function Login() {
                     <div  className={styles.row +" "+styles.button}>
                         <input type="submit" value="تسجيل الدخول" />
                     </div>
-                    {/* <div className="signup-link">لست عضوًا؟ <a href="#">سجل الآن</a></div> */}
                 </form>
             </div>
         </div>

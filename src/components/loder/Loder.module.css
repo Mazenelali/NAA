@@ -1,0 +1,27 @@
+.loaderContainer{
+    height: 75vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100000;
+    width: 100%;
+    background-color: white ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loaderContainer img {
+    width: 300px;
+    height: 300px;
+    animation: logo 0.8s infinite alternate;
+}
+
+@keyframes logo {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}

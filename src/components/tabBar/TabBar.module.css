@@ -1,0 +1,43 @@
+.tabBarContainer {
+    height: 50px;
+    background: #eee;
+    display: flex;
+    overflow-x: auto; /* Changed from overflow-y to overflow-x for horizontal scrolling */
+    align-items: center;
+ white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.tabBarContainer::-webkit-scrollbar { 
+    display: none;
+}
+
+.selected {
+    min-width: 80px;
+    background-color: var(--red); /* A blue shade for selection */
+    color: white;
+    padding: 0 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.notSelected {
+    min-width: 80px;
+    color: #333;
+    text-align: center;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.notSelected:hover {
+    background-color: #ccc;
+    transform: scale(1.05);
+}
+
+.selected:hover {
+    background-color: var(--red);
+    transform: scale(1.05);
+}

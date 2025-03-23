@@ -1,6 +1,7 @@
 .nav-container{
     display: flex;
     align-items: center;
+    justify-content: end;
     position: relative;
     width: calc(100%-20px);
     padding: 10px ;
@@ -17,12 +18,13 @@
     height: 40px ;   
 }
 
-.awrrow{
+.arrow{
     cursor: pointer;
 }
 
 @media (width < 500) {
-    .awrrow{
+    .arrow{
+        cursor: pointer;
         width: 30px;
         height: 25px;
     }

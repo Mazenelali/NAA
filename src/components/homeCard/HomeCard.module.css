@@ -18,6 +18,7 @@ flex-shrink: 0;
 .label{
     color: white; 
     font-size: x-large;
+    text-align: center;
 }
 
 .cardContainer:hover{
