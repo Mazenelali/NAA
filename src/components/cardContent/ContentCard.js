@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "./ContentCard.module.css";
 
-function ContentCard ({ files }) {
+
+function ContentCard({ files }) {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const getFileIcon = (mimeType) => {
@@ -32,6 +33,14 @@ function ContentCard ({ files }) {
     return null;
   };
 
+  const returnLink = (link, name ,id) => {
+    let newLink = link
+    newLink = newLink.split('/')
+    newLink[newLink.length-1] = 'preview'
+    console.log(newLink)
+    return newLink.join('/')
+  }
+
   return (
     <div className={styles.container}>
       {files.map((file) => (
@@ -49,7 +58,7 @@ function ContentCard ({ files }) {
         <div className={styles.modal}>
           <button className={styles.backButton} onClick={() => setSelectedFile(null)}> الرجوع ←</button>
           <iframe
-            src={selectedFile.displayLink+"#toolbar=0"}
+            src={returnLink(selectedFile.displayLink, selectedFile.name ,selectedFile.id)}
             title={selectedFile.name}
             className={styles.viewer}
           ></iframe>

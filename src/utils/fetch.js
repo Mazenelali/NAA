@@ -1,9 +1,9 @@
 import { setIsShowLoader } from "../store/gloabalSlice";
 import store from "../store/store"
-export async function fetchHandler(path, method, request) {
+export async function fetchHandler(path, method, request ,hideLoader) {
         try {
                 const url = `http://localhost:5050/api${path}`;
-                store.dispatch(setIsShowLoader(true))
+               if(!hideLoader)store.dispatch(setIsShowLoader(true))
                 const options = {
                         method,
                         headers: {
@@ -16,7 +16,7 @@ export async function fetchHandler(path, method, request) {
                 }
 
                 const response = await fetch(url, options);
-                store.dispatch(setIsShowLoader(false))
+                if(!hideLoader)store.dispatch(setIsShowLoader(false))
 
                 if (!response.ok) {
                         return  { error: true ,status :response.status };
@@ -26,7 +26,7 @@ export async function fetchHandler(path, method, request) {
                return  text ? {data:JSON.parse(text) , status:response.status , error:false }  :null
 
         } catch (error) {
-                store.dispatch(setIsShowLoader(false))
+                if(!hideLoader)store.dispatch(setIsShowLoader(false))
                 return { error: error.message || "Unknown error" , status:500 };
         }
 }

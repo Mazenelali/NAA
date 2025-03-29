@@ -1,4 +1,6 @@
 .tabBarContainer {
+    position: relative;
+    z-index: 20;
     height: 50px;
     background: #eee;
     display: flex;

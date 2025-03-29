@@ -1,5 +1,5 @@
 import { fetchHandler } from "../utils/fetch";
 
 export const request = {
-    getCategories : (request)=>fetchHandler('/drive/folder/files','POST',request)
+    getCategories : (request,hideLoader)=>fetchHandler('/drive/folder/files','POST',request,hideLoader)
 }
